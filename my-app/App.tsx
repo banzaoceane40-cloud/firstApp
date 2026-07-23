@@ -6,12 +6,18 @@ export default function App() {
     <View>
       <Image style={styles.mainImg}
       source={require("./images/VSCode.png")} />
+
       <Text style={styles.welcomeTxt}>Welcome to my app!</Text>
-      <Text>Enter your name</Text>
-      <TextInput placeholder="Oceane"/>
-      <Text>Enter your surname</Text>
-      <TextInput placeholder="Banza"/>
+
+      <View style={styles.inputFlex}>
+      <Text style={styles.headingTxt}>Enter your name</Text>
+      <TextInput style={styles.inputBoxTxt} placeholder="Oceane"/>
+      <Text style={styles.headingTxt}>Enter your surname</Text>
+      <TextInput style={styles.inputBoxTxt} placeholder="Banza"/>  
+      </View>
+      
       <Button title="Add user"/>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -43,5 +49,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: 250,
     height: 250
+  },
+
+  inputFlex: {
+    flexDirection: "row",
+    marginTop: 20
   }
 });
