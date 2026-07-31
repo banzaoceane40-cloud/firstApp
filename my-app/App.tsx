@@ -34,11 +34,21 @@ function MainScreen(){
       <View style={styles.inputFlex}>
       <Text style={styles.headingTxt}>Enter your name</Text>
       <TextInput style={styles.inputBoxTxt} placeholder="Oceane"
-      onChangeText={newText => setName(newText)}/>
+      keyboardType="default"
+      autoCapitalize="words"
+      autoComplete="name"
+      onChangeText={(text) => 
+        setName(text.replace (/[^a-zA-Z ]/g, ""))}
+      />
 
       <Text style={styles.headingTxt}>Enter your surname</Text>
       <TextInput style={styles.inputBoxTxt} placeholder="Banza"
-      onChangeText={newText => setSurname(newText)}/>
+       keyboardType="default"
+       autoCapitalize="words"
+      autoComplete="family-name"
+      onChangeText={(text) => 
+        setSurname(text.replace (/[^a-zA-Z ]/g, ""))}
+      />
       </View>
       
       <Button title="Add user"
